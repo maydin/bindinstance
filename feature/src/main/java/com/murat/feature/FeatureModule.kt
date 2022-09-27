@@ -6,9 +6,8 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class FeatureModule(private val context: Context) {
-
+class FeatureModule {
     @Provides
     @Singleton
-    fun providesPrinter() = Printer(context)
+    fun providesPrinter(context: Context) = Printer(context)
 }

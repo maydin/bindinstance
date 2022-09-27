@@ -13,8 +13,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         component = DaggerAppComponent.builder()
-            .featureModule(FeatureModule(this))
-            .loggerModule(LoggerModule(this))
+            .bindContext(this)
             .build()
     }
 }

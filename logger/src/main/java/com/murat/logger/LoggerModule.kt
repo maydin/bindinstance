@@ -6,9 +6,8 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class LoggerModule(private val context: Context) {
-
+class LoggerModule {
     @Provides
     @Singleton
-    fun providesLogger() = Logger(context)
+    fun providesLogger(context: Context) = Logger(context)
 }
