@@ -1,7 +1,7 @@
 package com.murat.bindinstance
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.murat.bindinstance.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
