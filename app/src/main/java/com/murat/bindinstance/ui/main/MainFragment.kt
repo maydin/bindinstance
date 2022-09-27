@@ -10,12 +10,16 @@ import androidx.lifecycle.ViewModelProvider
 import com.murat.bindinstance.MyApplication
 import com.murat.bindinstance.R
 import com.murat.feature.Printer
+import com.murat.logger.Logger
 import javax.inject.Inject
 
 class MainFragment : Fragment() {
 
     @Inject
     lateinit var printer: Printer
+
+    @Inject
+    lateinit var logger: Logger
 
     companion object {
         fun newInstance() = MainFragment()
@@ -34,13 +38,15 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<Button>(R.id.button).setOnClickListener { printer.printPackageName() }
+        view.findViewById<Button>(R.id.button).setOnClickListener {
+            printer.printPackageName()
+            logger.printPackageName()
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

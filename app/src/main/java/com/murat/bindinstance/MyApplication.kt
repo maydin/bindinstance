@@ -4,6 +4,7 @@ import android.app.Application
 import com.murat.bindinstance.di.AppComponent
 import com.murat.bindinstance.di.DaggerAppComponent
 import com.murat.feature.FeatureModule
+import com.murat.logger.LoggerModule
 
 class MyApplication : Application() {
 
@@ -11,6 +12,9 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        component = DaggerAppComponent.builder().featureModule(FeatureModule(this)).build()
+        component = DaggerAppComponent.builder()
+            .featureModule(FeatureModule(this))
+            .loggerModule(LoggerModule(this))
+            .build()
     }
 }
