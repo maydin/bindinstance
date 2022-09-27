@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "BindInstance"
-include ':app'
+include ':app',':feature'
