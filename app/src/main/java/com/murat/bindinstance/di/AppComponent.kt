@@ -1,6 +1,5 @@
 package com.murat.bindinstance.di
 
-import android.app.Application
 import android.content.Context
 import com.murat.bindinstance.ui.main.MainFragment
 import com.murat.feature.FeatureModule
